@@ -1,0 +1,24 @@
+#include "Cure.hpp"
+#include <iostream>
+
+Cure::Cure()
+	: AMateria("cure")
+{
+	std::cout << "Cure default constructor called" << std::endl;
+}
+
+Cure::Cure(const Cure& other)
+	: AMateria(other)
+{
+	std::cout << "Cure copy constructor called" << std::endl;
+}
+
+Cure::~Cure()
+{
+	std::cout << "Cure destructor called" << std::endl;
+}
+
+AMateria* Cure::clone() const
+{
+	return (new Cure(*this));
+}
