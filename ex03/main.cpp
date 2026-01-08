@@ -23,6 +23,18 @@ int main(void)
 	AMateria* c_clone = c->clone();
 	std::cout << "iclone-type: " << i_clone->getType() << std::endl;
 	std::cout << "cclone-type: " << c_clone->getType() << std::endl;
+	
+	//Swap Elements - assignment operator check
+	std::cout << "\n//Swap elements" << std::endl;
+	i = c;
+	c = i_clone;
+	std::cout << "new i-type: " << i->getType() << std::endl;
+	std::cout << "new c-type: " << c->getType() << std::endl;
+	
+
+
+
+
 
 	return 0;
 }
