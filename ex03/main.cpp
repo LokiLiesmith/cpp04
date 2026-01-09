@@ -1,6 +1,8 @@
 #include "AMateria.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
+#include "ICharacter.hpp"
+#include "Character.hpp"
 
 #include <iostream>
 
@@ -16,7 +18,7 @@ int main(void)
 	AMateria* c = new Cure();
 	
 	//Clone Test
-	std::cout << "\n//Clone test" << std::endl;
+	std::cout << "\n//Materia Clone test" << std::endl;
 	std::cout << "i-type: " << i->getType() << std::endl;
 	std::cout << "c-type: " << c->getType() << std::endl;
 	AMateria* i_clone = i->clone();
@@ -24,17 +26,28 @@ int main(void)
 	std::cout << "iclone-type: " << i_clone->getType() << std::endl;
 	std::cout << "cclone-type: " << c_clone->getType() << std::endl;
 	
-	//Swap Elements - assignment operator check
-	std::cout << "\n//Swap elements" << std::endl;
-	i = c;
-	c = i_clone;
-	std::cout << "new i-type: " << i->getType() << std::endl;
-	std::cout << "new c-type: " << c->getType() << std::endl;
-	
+	//use, equip, unequip
+	std::cout << "\n//The Ice bolt incident" << std::endl;
+	Character tony("Tony");
+	Character frankie("Frankie");
+	tony.equip(i);
+	tony.use(0, frankie);
+	tony.unequip(0);
+	tony.equip(c);
+	tony.use(0, frankie);
 
+	//Character copy
+	std::cout << "\n//Character Copy" << std::endl; 
+	Character copy(tony);
+	copy.use(0, tony);
+	std::cout << "\n//Character Assignment" << std::endl; 
+	Character assigned("Assigned");
+	assigned = tony;
+	assigned.use(0, tony);
 
-
-
+	std::cout << "\n//Armageddon" << std::endl;
+	delete i_clone;
+	delete c_clone;
 
 	return 0;
 }

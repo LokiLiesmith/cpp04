@@ -37,5 +37,10 @@ const std::string & AMateria::getType() const
 	return m_type;
 }
 
+void AMateria::use(ICharacter& target)
+{
+	std::cout << "AMateria use called" << std::endl;
+	(void)target;
+}
 //use will be added later
 //Clone is a pure virtual so defined in derived classes
