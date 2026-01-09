@@ -9,7 +9,7 @@ Character::Character(std::string name)
 		m_inventory[i] = NULL;
 	for(int i = 0; i < 100; i++)
 		m_dropped[i] = NULL;
-	std::cout << "Character default constructor called" << std::endl;
+	std::cout << "Character(name) constructor called" << std::endl;
 }
 
 Character::Character(const Character& other)

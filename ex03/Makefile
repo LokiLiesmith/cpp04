@@ -6,14 +6,14 @@
 #    By: mrazem <mrazem@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/07 01:47:24 by mrazem            #+#    #+#              #
-#    Updated: 2026/01/08 22:57:36 by mrazem           ###   ########.fr        #
+#    Updated: 2026/01/09 02:52:59 by mrazem           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX			:= c++
 CXXFLAGS	:= -Wall -Wextra -Werror -g -std=c++98
 
-SRC			:= main.cpp AMateria.cpp Cure.cpp Ice.cpp Character.cpp
+SRC			:= main.cpp AMateria.cpp Cure.cpp Ice.cpp Character.cpp MateriaSource.cpp
 NAME		:= interface
 OBJDIR		:= obj
 OBJ			:= $(SRC:%.c=$(OBJDIR)/%.o)
